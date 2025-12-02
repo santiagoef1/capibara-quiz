@@ -1,0 +1,108 @@
+/* Contenedor principal */
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #fef9c3, #e0f2fe);
+  padding: 1rem;
+}
+
+/* Tarjeta */
+.card {
+  width: min(800px, 95vw);
+  background: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Imagen principal */
+.hero {
+  width: 100%;
+  height: auto;
+  max-height: 320px;       /* evita que sea gigante */
+  object-fit: cover;     /* asegura que no se corte */
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+/* Títulos y texto */
+h1 {
+  font-size: 2.8rem;       /* fuente grande y protagonista */
+  color: #f97316;
+  margin: .5rem 0;
+  font-weight: 800;
+}
+
+p {
+  color: #374151;
+  font-size: 1.6rem;       /* más grande para acompañar */
+  margin-bottom: 1rem;
+}
+
+/* Botón */
+.btn {
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.5rem;       /* botón llamativo */
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  background: #059669;
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Decoraciones */
+.decorations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.decorations img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  transition: transform 0.3s ease;
+}
+
+.decorations img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  p { font-size: 1.2rem; }
+  .hero { max-height: 220px; }
+  .decorations img { width: 70px; height: 70px; }
+  .btn { width: 100%; font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.8rem; }
+  p { font-size: 1rem; }
+  .hero { max-height: 180px; }
+  .btn { font-size: 1rem; }
+}

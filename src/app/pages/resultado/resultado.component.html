@@ -1,0 +1,22 @@
+  <section class="wrap">
+    <div class="card">
+      <div class="celebracion" *ngIf="perfecto; else consuelo">
+        <h1 class="titulo-celebracion">¡Eres un experto capibara! 🦫</h1>
+        <p class="subtitulo">Puntuación perfecta: {{score}} de {{total}}</p>
+        <img src="assets/capibaras/fiesta.webp.png" class="capibara" alt="Capibaras celebrando" />
+        <div class="confeti" style="left:15%; background:#facc15;"></div>
+        <div class="confeti" style="left:45%; background:#f87171;"></div>
+        <div class="confeti" style="left:75%; background:#34d399;"></div>
+      </div>
+
+      <ng-template #consuelo>
+        <div class="celebracion consuelo">
+          <h1 class="titulo-celebracion">¡Buen intento, capibara aprendiz! 🧸</h1>
+          <p class="subtitulo">Tu puntuación: {{score}} de {{total}}. ¡Sigue explorando!</p>
+          <img src="assets/capibaras/consuelo-sepia.webp.png" class="capibara" alt="Capibara consolando" />
+        </div>
+      </ng-template>
+
+      <button class="btn" (click)="restart()">Volver a jugar</button>
+    </div>
+  </section>

@@ -1,0 +1,34 @@
+<section class="wrap">
+  <div class="card quiz">
+    <!-- Main question -->
+    <h2 class="pregunta">{{ current.text }}</h2>
+
+    <!-- Image -->
+    <div class="imagen-container">
+      <img *ngIf="current.image" [src]="current.image" alt="Illustration" class="hero" />
+    </div>
+
+    <!-- Options -->
+    <ul class="options">
+      <li *ngFor="let opt of current.options; let i = index"
+          (click)="selectOption(i)"
+          [class.selected]="selected === i"
+          [class.correct]="showExplanation && i === current.answerIndex"
+          [class.incorrect]="showExplanation && selected === i && i !== current.answerIndex">
+        {{ opt }}
+        <!-- Feedback icons -->
+        <span *ngIf="showExplanation && i === current.answerIndex" class="icon">✔️</span>
+        <span *ngIf="showExplanation && selected === i && i !== current.answerIndex" class="icon">❌</span>
+      </li>
+    </ul>
+
+    <!-- Explanation -->
+   <div *ngIf="showExplanation" class="explicacion tierna">
+    <span class="emoji">🌿</span>
+    <p>{{ current.explanation }}</p>
+   </div>
+
+    <!-- Next button -->
+   <button class="btn" (click)="next()" [disabled]="selected === null">Siguiente</button>
+  </div>
+</section>

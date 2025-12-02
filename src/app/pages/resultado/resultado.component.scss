@@ -1,0 +1,164 @@
+body {
+  font-family: 'Nunito', 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+/* Global font */
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Fullscreen wrapper */
+.wrap {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #fef9c3, #e0f2fe);
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Main card */
+.card {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Celebration block */
+.celebracion {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: #fef3c7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Consolation variant */
+.celebracion.consuelo {
+  background: #fef6e4;
+}
+
+/* Title */
+.titulo-celebracion {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0ea5e9;
+  text-shadow: 0 0 10px #38bdf8;
+  animation: brillo 2s ease-in-out infinite alternate;
+  margin: 0;
+}
+
+/* Subtitle */
+.subtitulo {
+  font-size: 1.2rem;
+  color: #374151;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Capybara image */
+.capibara {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  animation: bailar 1s ease-in-out infinite alternate;
+}
+
+/* Confetti across full screen */
+.confeti {
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: caerConfeti 4s linear infinite;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+/* Confetti animation */
+@keyframes caerConfeti {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Button */
+.btn {
+  padding: 1rem 1.6rem;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  align-self: stretch;
+  font-size: 1.3rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.btn:hover {
+  background: #059669;
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Title glow */
+@keyframes brillo {
+  from { opacity: 0.8; }
+  to { opacity: 1; }
+}
+
+/* Capybara bounce */
+@keyframes bailar {
+  from { transform: translateY(0) rotate(-5deg); }
+  to { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .titulo-celebracion { font-size: 1.6rem; }
+  .subtitulo { font-size: 1rem; }
+  .capibara { max-width: 140px; }
+  .btn { font-size: 1rem; }
+  .confeti { width: 20px; height: 20px; }
+}
+
+@media (max-width: 480px) {
+  .titulo-celebracion { font-size: 1.4rem; }
+  .subtitulo { font-size: 0.9rem; }
+  .capibara { max-width: 110px; }
+  .btn { font-size: 0.9rem; }
+  .confeti { width: 16px; height: 16px; }
+}
